@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  
+     <!-- Styles -->
+     <style>
+           
+            .full-height {
+                height: 10vh;
+            }
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }         
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+
+            @media (min-width: 768px) {
+              .carousel-multi-item-2 .col-md-3 {
+                float: left;
+                width: 25%;
+                max-width: 100%;
+              }
+            }
+
+            .carousel-multi-item-2 .card img {
+              border-radius: 2px;
+            }
+          
+        </style>
+    </head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>PERPUSTAKAAN SMK N 1 BATIPUH</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/smk.png">
+  
+
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="{{url('assets')}}/https://fonts.gstatic.com">
+    <link rel="preconnect" href="{{url('assets')}}/https://fonts.googleapis.com">
+    <link rel="preconnect" href="{{url('assets')}}/https://fonts.gstatic.com" crossorigin>
+    <link href="{{url('assets')}}/https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="{{url('assets')}}/vendors/prism/prism.css" rel="stylesheet">
+    <link href="{{url('assets')}}/css/theme.css" rel="stylesheet" />
+    <link href="{{url('assets')}}/css/user.css" rel="stylesheet" />
+
+    <link href="{{url('assets')}}/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+        
+    <div class="table-responsive">
+     
+</div>
+            </div>
+        </div>
+    </body>
+
+  <body>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main>
+      <section class="py-3" style="background-color:#10203F;">
+        <div class="container" id="topNav">
+          <div class="row justify-content-between">
+          <div class="flex-center position-ref full-height">            
+                <div class="top-right links">                            
+                        <a href="{{ route('login') }}" class="btn btn-md btn-block btn-success">Login</a>                       
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="btn btn-md btn-block btn-primary">Register</a>
+                        @endif
+        </div> 
+            <div class="col-auto"> <a class="navbar-brand" ><img src="assets/img/logos/smk.png" width="20" alt="logo"  class="mb-0 font-sans-serif fw-bold fs-md-5 fs-lg-1">    SMK NEGERI 1 BATIPUH </a></div>
+            <div class="col-auto order-2 d-none d-sm-block"> <i class="fas fa-user text-info me-2"></i></div>
+            <div class="col-auto d-none d-lg-block">
+          
+              
+                <form>
+                  <div class="input-group d-flex flex-end-center">
+                    <input class="form-control form-eduprixsearch-control rounded-pill" id="formGroupExampleInput" type="text" placeholder="Cari Buku"  class="fa fa-search" /><img class="input-box-icon"  width="36"  alt="" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+
+
+      
+      <!-- <section> begin ============================-->
+    
+      <!-- <section class="py-6">
+      @foreach(App\Buku::get() as $data) 
+      <div class="card" style="width: 300px;">
+      <div class="container">
+        <img src="/foto/{{$data->foto}}" class="card-img" alt="Card image cap" alt="...">
+        <div class="card-body text-center">
+            <h5 class="card-title">{{$data->judul}}</h5>
+            <h5 class="card-title">{{$data->stok}}</h5>
+        </div>
+      </div>  
+    </div>
+    @endforeach        
+    </section> -->
+
+    <section class="py-6">
+    <div class="container">
+   
+  <div class="row">
+  @foreach(App\Buku::get() as $data) 
+    <div class="col">
+    <div class="card" style="width: 300px;">
+      <div class="container">
+        <p style="margin-right:300px;">
+        <img src="/foto/{{$data->foto}}"  width="200px" height="200" alt="Card image cap" alt="..."></p>
+        <p style="margin-right:350px;text-align:center" width="300">
+            <h5>{{$data->judul}}</h5>
+            <h5>{{$data->stok}}</h5>
+          </p>
+          
+      </div>  
+    </div>
+    </div>
+    @endforeach 
+  </div> 
+
+</div>
+  </section>
+    
+
+      
+
+     <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="{{url('assets')}}/vendors/popper/popper.min.js"></script>
+    <script src="{{url('assets')}}/vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="{{url('assets')}}/vendors/anchorjs/anchor.min.js"></script>
+    <script src="{{url('assets')}}/vendors/is/is.min.js"></script>
+    <script src="{{url('assets')}}/https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="{{url('assets')}}/vendors/fontawesome/all.min.js"></script>
+    <script src="{{url('assets')}}/vendors/swiper/swiper-bundle.min.js"></script>
+    <script src="{{url('assets')}}/vendors/fontawesome/all.min.js"></script>
+    <script src="{{url('assets')}}/vendors/lodash/lodash.min.js"></script>
+    <script src="{{url('assets')}}/https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="{{url('assets')}}/assets/js/theme.js"></script>
+
+    <link href="{{url('assets')}}/https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Rubik:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+  </body>
+
+</html>
